@@ -14,8 +14,8 @@
 Versucht folgender Code magische Funktionen aufzurufen? Wenn ja, welche? Hinweis: in der Klasse Student sind sämtliche
 Membervariablen und (nicht-magische) Funktionen privat. 
 1. $oStudent = new Student("John", "Doe", 1985, "kwmXX001"); -> __contructor()
-2. $sFirstname = "Mary";
-3. echo("</br>Firstname: ".$sFirstname);
+2. $sFirstname = "Mary"; -> kein Aufruf magischer Funktionen
+3. echo("Firstname: ".$sFirstname); -> kein Aufruf magischer Funktionen
 4. echo("Student: ".$oStudent->toString()); -> __call()
 
 
