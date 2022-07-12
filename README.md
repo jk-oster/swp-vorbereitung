@@ -25,15 +25,15 @@ Membervariablen und (nicht-magische) Funktionen privat.
 - Die Funktion __call wird immer automatisch bei jedem Funktionsaufruf (innerhalb eine Klasse) aufgerufen. -> falsch
 - Bei der Übertragung mittels POST werden die übertragenen Informationen verschlüsselt. -> falsch (nur nicht in URL sichtbar aber nicht verschlüsselt -> nur mit HTTPS)
 - Eine PHP Session ist an den Browser gebunden (d.h. für einen anderen Browser wird eine andere Session gestartet). -> richtig
-- Ein DOM-Parser ist ein Einschritt-Parser der ein XML-Dokument sequenziell abarbeitet. -> falsch nicht sequenziell
+- Ein DOM-Parser ist ein Einschritt-Parser der ein XML-Dokument sequenziell abarbeitet. -> falsch (nicht sequenziell)
 - Ein SAX-Parser arbeitet Event-basiert. -> richtig
-- Der Speicherverbrauch ist beim SAX-Parser höher als beim DOMParser -> falsch
+- Der Speicherverbrauch ist beim SAX-Parser höher als beim DOMParser -> falsch (umgekehrt, weil DOM zuerst ganzes File einlesen muss)
 - PHP ist eine clientseitige Skriptsprache. -> falsch (serverseitig)
 - PHP ist eine interpretierte Skriptsprache. -> richtig
-- Der Browser kann keinen PHP Code ausführen. -> falsch
+- Der Browser kann keinen PHP Code ausführen. -> richtig
 - Der Code $oMyObject = new MyObject(); führt zu einem impliziten Aufruf einer magischen Funktion. -> richtig (__constructor())
-- Mittels Type Hinting kann bei der Erstellung eines Objekts dessen Typ festgelegt werden. 
-- Bei der Übertragung mittels GET können keine Dateien mitgeschickt werden. -> falsch
+- Mittels Type Hinting kann bei der Erstellung eines Objekts dessen Typ festgelegt werden.  -> falsch (Type Hints bei Funktionsparameter veranlassen php den Datentyp zu prüfen und Fehler zu werfen)
+- Bei der Übertragung mittels GET können keine Dateien mitgeschickt werden. -> richtig
 - Ein durch PHP-Skript erzeugtes Cookie kann nur durch den Betreiber des Servers gelöscht werden, da es im temp_Verzeichnis des Webservers gespeichert wird. -> falsch (Cookies können vom Client glöscht werden)
 - Ein mittels password_hash gehashtes Passwort kann mittels einer weiteren nativen PHP-Funktion wieder „entschlüsselt“ werden. -> falsch (hash ist eine Einwegfunktion)
 - Im Kontext von SQL-Injection sind numerische Datentypen weniger gefährlich als Zeichenketten. -> richtig
