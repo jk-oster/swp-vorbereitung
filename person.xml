@@ -1,0 +1,23 @@
+<Personen>
+    <Person id="p01" geschlecht="männlich">
+        <Name>
+            <Vorname>Max</Vorname>
+            <Nachname>Mustermann</Nachname>
+        </Name>
+        <Interessen>
+            <Hobby>Sport</Hobby>
+            <Hobby>Musik</Hobby>
+        </Interessen>
+    </Person>
+    <Person id="p02" geschlecht="weiblich">
+        <Name>
+            <Vorname>Jane</Vorname>
+            <Nachname>Doe</Nachname>
+        </Name>
+        <Interessen>
+            <Hobby>Sport</Hobby>
+            <Hobby>Kunst</Hobby>
+            <Hobby>Technologie</Hobby>
+        </Interessen>
+    </Person>
+</Personen>
