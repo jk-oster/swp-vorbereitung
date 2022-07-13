@@ -2,28 +2,24 @@
 
 class MagicModel
 {
-    private string $username;
-    private int $id;
-    private string $email;
-    private string $password;
+    private string $username = '';
+    private int $id = 0;
+    private string $email = '';
+    private string $password = '';
 
     public function __construct()
     {
         echo "magic CONSTRUCTOR called<br>";
-        $this->username = '';
-        $this->id = 0;
-        $this->email = '';
-        $this->password = '';
     }
 
     public static function __callStatic($method, $arguments)
     {
-        echo "magic STATICCALL called with method name: '$method'<br>";
+        echo "magic CALLSTATIC called with method name: '$method'<br>";
         if (count($arguments) > 0) {
-            echo " with arguments: " . implode(", ", $arguments) . '<br>';
+            echo " with arguments: '" . implode(", ", $arguments) . "'<br>";
         }
         if (!method_exists(static::class, $method)) {
-            echo " but method '$method' does not exist in <br>" . static::class;
+            echo " but method '$method' does not exist in " . static::class . "<br>";
         }
     }
 
@@ -31,7 +27,7 @@ class MagicModel
     {
         echo "magic CALL called with method name: '$method'<br>";
         if (count($arguments) > 0) {
-            echo " with arguments: " . implode(", ", $arguments) . '<br>';
+            echo " with arguments: '" . implode(", ", $arguments) . "'<br>";
         }
         if (!method_exists($this, $method)) {
             $className = get_class($this);
@@ -85,6 +81,6 @@ class MagicModel
         foreach (get_object_vars($this) as $name => $value) {
             $res .= "$name : $value<br>";
         }
-        return $res . "<br>";
+        return $res;
     }
 }

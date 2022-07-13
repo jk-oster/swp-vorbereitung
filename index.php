@@ -18,8 +18,8 @@ session_start();
         unset($_SESSION['user']);
         showLoginForm($inputName);
     } else if ($action === 'login' || isset($_SESSION['user'])) {
-        if (checkLogin()) {
-            $inputName = $_REQUEST['username'];
+        if (isset($_SESSION['user']) || checkLogin()) {
+            $inputName = $_REQUEST['username'] ?? $_SESSION['user'];
             $_SESSION['user'] = $inputName;
             echo "<h1>Hello, user $inputName</h1>";
             echo getRandQuoteString();
@@ -40,8 +40,7 @@ session_start();
         $result = $DB->query($sqlQuery);
         if (!$DB->close()) {
             throw new Exception("Error: Cold not close db connection!");
-        }
-        else if (!$result) {
+        } else if (!$result) {
             throw new Exception("Error: Failed to execute query! $sqlQuery");
         }
         return $result;
@@ -57,7 +56,7 @@ session_start();
 
     function checkLogin(): bool
     {
-        $inputName = $_REQUEST['username'];
+        $inputName = $_REQUEST['username'] ?? '';
         $user = queryDB("SELECT username FROM users WHERE username = '$inputName'");
         return $user && count($user->fetch_all(MYSQLI_ASSOC)) === 1;
     }
